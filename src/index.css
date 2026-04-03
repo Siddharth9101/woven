@@ -1,1 +1,68 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+
+/* For Headings / Logo */
+.italiana-regular {
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.02em;
+}
+
+/* For Body / Labels */
+/* use between 400 and 700 */
+.instrument-sans-regular {
+  font-family: "Instrument Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+.instrument-sans-bold {
+  font-family: "Instrument Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* For Descriptions / Quotes */
+/* <weight>: Use a value from 400 to 700 */
+.instrument-sans-regular {
+  font-family: "Instrument Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: "wdth" 100;
+}
+
+/* root variables */
+
+/**
+    Name	HSL	Hex	Usage
+Cream (background)	30° 45% 96%	#FAF5EE	Page background
+Warm White	30° 100% 98%	#FFFCF7	Button text, highlights
+Charcoal	60° 5% 21%	#383835	Headings, primary text
+Terracotta	14° 48% 54%	#C26B52	Accents, heart icon, decorative lines
+Sage Green	100° 14% 59%	#8BA685	Secondary accent
+Muted Brown	25° 13% 49%	#8D7A6B	Subtitles, labels, muted text
+Light Grey	30° 10% 86%	#E1DBD4	Borders, dividers, input strokes
+Soft Cream	25° 27% 92%	#F2EBE1	Avatar backgrounds, subtle surfaces
+**/
+:root {
+  --color-background: hsl(30, 45%, 96%);
+  --color-highlight: hsl(30, 100%, 98%);
+  --color-primary: hsl(60, 5%, 21%);
+  --color-accent: hsl(14, 48%, 54%);
+  --color-secondary: hsl(100, 14%, 59%);
+  --color-muted-text: hsl(25, 13%, 49%);
+  --color-border: hsl(30, 10%, 86%);
+  --color-soft-cream: hsl(25, 27%, 92%);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+}
