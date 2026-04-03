@@ -37,7 +37,7 @@ Soft Cream	-	Avatar backgrounds, subtle surfaces
 }
 
 .navbar {
-  @apply mt-2 flex justify-between items-center py-4 border-y border-light-grey;
+  @apply mt-2 flex justify-between items-center py-4 px-2 border-y border-light-grey;
 }
 
 .logo {
@@ -50,4 +50,32 @@ Soft Cream	-	Avatar backgrounds, subtle surfaces
 
 .nav_link {
   @apply uppercase text-sm;
+}
+
+.hero_left_side {
+  @apply sm:w-3/5 px-2;
+}
+
+.hero_heading {
+  @apply text-6xl sm:text-8xl font-heading mb-6 sm:mb-8;
+}
+
+.hero_sub_heading {
+  @apply text-5xl sm:text-8xl font-desc italic;
+}
+
+.hero_paragraph {
+  @apply font-label text-muted-brown text-sm sm:text-lg mb-6;
+}
+
+.hero_btn {
+  @apply relative px-6 sm:px-8 py-2 sm:py-3 border-2 border-muted-brown rounded-md uppercase text-xs sm:text-sm cursor-pointer hover:bg-muted-brown hover:text-warm-white transition-all duration-300 ease-in-out active:scale-90;
+}
+
+.hero_btn_border {
+  @apply absolute -top-2 left-0 bg-terracotta h-0.5 w-3/5;
+}
+
+.hero_right_side {
+  @apply sm:w-2/5 px-2 py-6 sm:py-0 flex justify-center items-center;
 }
