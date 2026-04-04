@@ -3,7 +3,7 @@ import { Link } from "react-router";
 const NAV_LINKS = [
   {
     label: "gallery",
-    link: "#gallery",
+    link: "/gallery",
   },
   {
     label: "about",
