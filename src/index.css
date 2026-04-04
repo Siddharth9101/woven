@@ -32,50 +32,104 @@ Soft Cream	-	Avatar backgrounds, subtle surfaces
   --color-soft-cream: hsl(25, 27%, 92%);
 }
 
-.container {
-  @apply max-w-6xl mx-auto px-4;
-}
+@layer components {
+  .container {
+    @apply max-w-6xl mx-auto px-4;
+  }
 
-.navbar {
-  @apply mt-2 flex justify-between items-center py-4 px-2 border-y border-light-grey;
-}
+  .navbar {
+    @apply mt-2 flex justify-between items-center py-4 px-2 border-y border-light-grey;
+  }
 
-.logo {
-  @apply font-heading text-2xl sm:text-3xl;
-}
+  .logo {
+    @apply font-heading text-2xl sm:text-3xl;
+  }
 
-.nav_links_container {
-  @apply hidden sm:flex sm:gap-8;
-}
+  .nav_links_container {
+    @apply hidden sm:flex sm:gap-8;
+  }
 
-.nav_link {
-  @apply uppercase text-sm;
-}
+  .nav_link {
+    @apply uppercase text-sm;
+  }
 
-.hero_left_side {
-  @apply sm:w-3/5 px-2;
-}
+  .hero_left_side {
+    @apply sm:w-3/5 px-2;
+  }
 
-.hero_heading {
-  @apply text-6xl sm:text-8xl font-heading mb-6 sm:mb-8;
-}
+  .hero_heading {
+    @apply text-6xl sm:text-8xl font-heading mb-6 sm:mb-8;
+  }
 
-.hero_sub_heading {
-  @apply text-5xl sm:text-8xl font-desc italic;
-}
+  .hero_sub_heading {
+    @apply text-5xl sm:text-8xl font-desc italic;
+  }
 
-.hero_paragraph {
-  @apply font-label text-muted-brown text-sm sm:text-lg mb-6;
-}
+  .hero_paragraph {
+    @apply font-label text-muted-brown text-sm sm:text-lg mb-6;
+  }
 
-.hero_btn {
-  @apply relative px-6 sm:px-8 py-2 sm:py-3 border-2 border-muted-brown rounded-md uppercase text-xs sm:text-sm cursor-pointer hover:bg-muted-brown hover:text-warm-white transition-all duration-300 ease-in-out active:scale-90;
-}
+  .hero_btn {
+    @apply relative px-6 sm:px-8 py-2 sm:py-3 border-2 border-muted-brown rounded-md uppercase text-xs sm:text-sm cursor-pointer hover:bg-muted-brown hover:text-warm-white transition-all duration-300 ease-in-out active:scale-90;
+  }
 
-.hero_btn_border {
-  @apply absolute -top-2 left-0 bg-terracotta h-0.5 w-3/5;
-}
+  .hero_btn_border {
+    @apply absolute -top-2 left-0 bg-terracotta h-0.5 w-3/5;
+  }
 
-.hero_right_side {
-  @apply sm:w-2/5 px-2 pt-6 sm:py-0 flex justify-center items-center;
+  .hero_right_side {
+    @apply sm:w-2/5 px-2 pt-6 sm:py-0 flex justify-center items-center;
+  }
+
+  .gallery_heading {
+    @apply font-heading text-3xl sm:text-4xl;
+  }
+
+  .gallery_sub_heading {
+    @apply font-label text-sm sm:text-lg font-light text-muted-brown uppercase py-3;
+  }
+
+  .gallery_border {
+    @apply border-b border-light-grey h-0.5;
+  }
+
+  .card_container {
+    @apply flex justify-center;
+  }
+
+  .card {
+    @apply flex flex-col justify-center items-center w-full cursor-pointer;
+  }
+
+  .card_img_wrapper {
+    @apply w-full aspect-square overflow-hidden rounded-sm mb-2;
+  }
+
+  .card_img {
+    @apply size-full object-cover hover:scale-105 transition-all duration-300 ease-in-out;
+  }
+
+  .card_title {
+    @apply font-heading font-semibold tracking-wider text-lg self-start;
+  }
+
+  .card_sub_title {
+    @apply font-label font-light text-sm uppercase self-start;
+  }
+
+  .footer_container {
+    @apply mt-8 mb-2 py-4 border-y border-light-grey flex justify-between items-center;
+  }
+
+  .footer_heading {
+    @apply text-xs sm:text-sm text-muted-brown;
+  }
+
+  .footer_logo {
+    @apply font-heading font-medium;
+  }
+
+  .footer_link {
+    @apply text-pink-400 flex gap-1 items-center text-sm sm:text-base;
+  }
 }
