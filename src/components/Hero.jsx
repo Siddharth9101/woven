@@ -5,7 +5,20 @@ const Hero = () => {
     <section className="container py-8 md:flex md:gap-4">
       <div className="hero_left_side">
         <h1 className="hero_heading">
-          Handcrafted <br />
+          <span className="relative w-fit">
+            Handcrafted
+            <Link
+              className="absolute -right-10 -top-4"
+              to="https://www.instagram.com/crochet.macrame.handmade?igsh=MTlpanJzemoycnV3YQ=="
+            >
+              <img
+                src="/images/follow-cartoon.png"
+                alt="rochet.macrame.handmade"
+                className="size-14 rotate-12"
+              />
+            </Link>
+          </span>{" "}
+          <br />
           <span className="hero_sub_heading">with intention</span>
         </h1>
         <p className="hero_paragraph">
