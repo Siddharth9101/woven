@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const Hero = () => {
   return (
     <section className="container py-8 md:flex md:gap-4">
@@ -11,10 +13,10 @@ const Hero = () => {
           each one made slowly, by hand.
         </p>
 
-        <button className="hero_btn">
+        <Link to="/gallery" className="hero_btn">
           <div className="hero_btn_border" />
           Explore Gallery
-        </button>
+        </Link>
       </div>
       <div className="hero_right_side">
         <img src="/images/hero-img.png" alt="hero image" />
