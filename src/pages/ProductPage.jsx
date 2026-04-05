@@ -25,42 +25,36 @@ const ProductPage = () => {
         </div>
 
         {/* Product section */}
-        <div className="py-4 sm:py-8 grid sm:grid-cols-2 px-2">
+        <div className="product_section">
           {/* left */}
-          <div className="w-fit aspect-auto overflow-hidden sm:pt-8">
+          <div className="product_left">
             <img src={ITEM.img} alt={ITEM.title} />
           </div>
 
           {/* right */}
-          <div className="flex flex-col gap-4 pl-2 sm:pl-16 mt-6 sm:mt-0">
-            <span className="text-muted-brown font-label uppercase">
-              Macrame
-            </span>
-            <h1 className="w-fit font-heading text-5xl flex flex-col gap-4 max-w-80">
+          <div className="product_right">
+            <span className="product_badge">Macrame</span>
+            <h1 className="product_title">
               {ITEM.title}
-              <div className="h-0.5 bg-terracotta w-3/5" />
+              <div className="product_title_underline" />
             </h1>
 
-            <p className="font-desc text-muted-brown max-w-80">
+            <p className="product_desc">
               A hand-knotted wall piece inspired by the geometry of sunlight
               through woven curtains. Each knot is tied with intention, creating
               a meditation in cotton and form.
             </p>
 
-            <h3 className="uppercase font-label text-lg font-semibold mt-4 sm:mt-6">
-              Details
-            </h3>
+            <h3 className="product_label">Details</h3>
 
-            <div className="flex flex-col gap-2 font-label text-muted-brown">
-              <p className="label">Material: 100% natural cotton rope</p>
-              <p className="label">Dimensions: 60 × 90 cm</p>
+            <div className="product_info">
+              <p>Material: 100% natural cotton rope</p>
+              <p>Dimensions: 60 × 90 cm</p>
             </div>
 
-            <span className="uppercase font-label text-lg font-semibold mt-4 sm:mt-6">
-              Find us on instagram
-            </span>
+            <span className="product_label">Find us on instagram</span>
             <Link
-              className="py-4 max-w-80 h-14 flex items-center justify-center border border-charcoal rounded-lg hover:bg-charcoal hover:text-warm-white transition-all duration-300 ease-in-out active:scale-90"
+              className="product_insta_link"
               to="https://www.instagram.com/crochet.macrame.handmade?igsh=MTlpanJzemoycnV3YQ=="
               target="_blank"
             >

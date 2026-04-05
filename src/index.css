@@ -136,4 +136,44 @@ Soft Cream	-	Avatar backgrounds, subtle surfaces
   .back_btn {
     @apply flex items-center gap-1 w-fit px-4 py-1 font-label uppercase text-sm rounded-md border border-transparent hover:border-muted-brown transition-all duration-300 ease-in-out;
   }
+
+  .product_section {
+    @apply py-4 sm:py-8 grid sm:grid-cols-2 px-2;
+  }
+
+  .product_left {
+    @apply w-fit aspect-auto overflow-hidden sm:pt-8;
+  }
+
+  .product_right {
+    @apply flex flex-col gap-4 pl-2 sm:pl-16 mt-6 sm:mt-0;
+  }
+
+  .product_badge {
+    @apply text-muted-brown font-label uppercase;
+  }
+
+  .product_title {
+    @apply w-fit font-heading text-5xl flex flex-col gap-4 max-w-80;
+  }
+
+  .product_title_underline {
+    @apply h-0.5 bg-terracotta w-3/5;
+  }
+
+  .product_desc {
+    @apply font-desc text-muted-brown max-w-80;
+  }
+
+  .product_label {
+    @apply uppercase font-label text-lg font-semibold mt-4 sm:mt-6;
+  }
+
+  .product_info {
+    @apply flex flex-col gap-2 font-label text-muted-brown;
+  }
+
+  .product_insta_link {
+    @apply py-4 max-w-80 h-14 flex items-center justify-center border border-charcoal rounded-lg hover:bg-charcoal hover:text-warm-white transition-all duration-300 ease-in-out active:scale-90;
+  }
 }

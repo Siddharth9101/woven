@@ -8,10 +8,12 @@ const NAV_LINKS = [
   {
     label: "about",
     link: "https://www.instagram.com/crochet.macrame.handmade?igsh=MTlpanJzemoycnV3YQ==",
+    target: "_blank",
   },
   {
     label: "contact",
     link: "https://www.instagram.com/direct/inbox/?hl=en",
+    target: "_blank",
   },
 ];
 
@@ -21,14 +23,18 @@ const Navbar = () => {
       <nav className="navbar">
         {/* logo */}
         <div>
-          <h2 className="logo">Woven</h2>
+          <Link to="/">
+            <h2 className="logo">Woven</h2>
+          </Link>
         </div>
 
         {/* nav links */}
         <ul className="nav_links_container">
           {NAV_LINKS.map((item, i) => (
             <li key={i} className="nav_link">
-              <Link to={item.link}>{item.label}</Link>
+              <Link to={item.link} target={item.target ? item.target : "_self"}>
+                {item.label}
+              </Link>
             </li>
           ))}
         </ul>
