@@ -23,7 +23,10 @@ const Hero = () => {
               }}
               className="absolute -right-10 -top-4"
             >
-              <Link to="https://www.instagram.com/crochet.macrame.handmade?igsh=MTlpanJzemoycnV3YQ==">
+              <Link
+                to="https://www.instagram.com/crochet.macrame.handmade?igsh=MTlpanJzemoycnV3YQ=="
+                target="_blank"
+              >
                 <img
                   src="/images/follow-cartoon.png"
                   alt="rochet.macrame.handmade"
