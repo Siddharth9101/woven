@@ -1,22 +1,36 @@
 import { Link } from "react-router";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
     <section className="container py-8 md:flex md:gap-4">
-      <div className="hero_left_side">
+      <motion.div
+        initial={{ opacity: 0, y: 50, scale: 0.9 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="hero_left_side"
+      >
         <h1 className="hero_heading">
           <span className="relative w-fit">
             Handcrafted
-            <Link
+            <motion.div
+              animate={{ rotate: [0, -10, 10, -10, 0] }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
               className="absolute -right-10 -top-4"
-              to="https://www.instagram.com/crochet.macrame.handmade?igsh=MTlpanJzemoycnV3YQ=="
             >
-              <img
-                src="/images/follow-cartoon.png"
-                alt="rochet.macrame.handmade"
-                className="size-14 rotate-12"
-              />
-            </Link>
+              <Link to="https://www.instagram.com/crochet.macrame.handmade?igsh=MTlpanJzemoycnV3YQ==">
+                <img
+                  src="/images/follow-cartoon.png"
+                  alt="rochet.macrame.handmade"
+                  className="size-14 rotate-12"
+                />
+              </Link>
+            </motion.div>
           </span>{" "}
           <br />
           <span className="hero_sub_heading">with intention</span>
@@ -30,10 +44,16 @@ const Hero = () => {
           <div className="hero_btn_border" />
           Explore Gallery
         </Link>
-      </div>
-      <div className="hero_right_side">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50, scale: 0.9 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="hero_right_side"
+      >
         <img src="/images/hero-img.png" alt="hero image" />
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import GalleryCard from "./ui/Card";
+import { motion } from "framer-motion";
 
 const ITEMS = [
   {
@@ -45,13 +46,18 @@ const Gallery = () => {
     <section className="container mb-8">
       <div className="py-2">
         {/* heading & subheading*/}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <h2 className="gallery_heading">Gallery</h2>
           <Link to="/gallery" className="gallery_sub_heading">
             Browse The Collection
           </Link>
           <div className="gallery_border" />
-        </div>
+        </motion.div>
       </div>
 
       {/* Items Grid */}

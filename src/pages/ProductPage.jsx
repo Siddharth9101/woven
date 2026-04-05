@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import { Link } from "react-router";
 import { MdArrowBack } from "react-icons/md";
-import GalleryCard from "../components/ui/Card.jsx";
+import { motion } from "framer-motion";
 
 const ITEM = {
   id: 1,
@@ -27,12 +27,24 @@ const ProductPage = () => {
         {/* Product section */}
         <div className="product_section">
           {/* left */}
-          <div className="product_left">
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="product_left"
+          >
             <img src={ITEM.img} alt={ITEM.title} />
-          </div>
+          </motion.div>
 
           {/* right */}
-          <div className="product_right">
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="product_right"
+          >
             <span className="product_badge">Macrame</span>
             <h1 className="product_title">
               {ITEM.title}
@@ -60,7 +72,7 @@ const ProductPage = () => {
             >
               @crochet.macrame.handmade
             </Link>
-          </div>
+          </motion.div>
         </div>
       </main>
       <Footer />
