@@ -14,7 +14,7 @@ const NAV_LINKS = [
   },
   {
     label: "contact",
-    link: "https://www.instagram.com/direct/inbox/?hl=en",
+    link: "https://www.instagram.com/crochet.macrame.handmade?igsh=MTlpanJzemoycnV3YQ==",
     target: "_blank",
   },
 ];

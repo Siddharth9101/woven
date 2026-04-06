@@ -58,11 +58,11 @@ Soft Cream	-	Avatar backgrounds, subtle surfaces
   }
 
   .hero_heading {
-    @apply text-6xl sm:text-8xl font-heading mb-6 sm:mb-8;
+    @apply text-5xl sm:text-8xl font-heading mb-6 sm:mb-8;
   }
 
   .hero_sub_heading {
-    @apply text-5xl sm:text-8xl font-desc italic;
+    @apply text-4xl sm:text-8xl font-desc italic;
   }
 
   .hero_paragraph {
