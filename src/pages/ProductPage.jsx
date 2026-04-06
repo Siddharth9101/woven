@@ -1,17 +1,31 @@
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
-import { Link } from "react-router";
+import { Link, useParams } from "react-router";
 import { MdArrowBack } from "react-icons/md";
 import { motion } from "framer-motion";
-
-const ITEM = {
-  id: 1,
-  img: "/flowral_pouch/flowral_pouch_01.jpeg",
-  title: "Floral Pouch",
-  subTitle: "crochet",
-};
+import { useProducts } from "../hooks/useProducts.jsx";
+import { useEffect, useState } from "react";
 
 const ProductPage = () => {
+  const { fetchProductById, loading, product } = useProducts();
+  const { id } = useParams();
+  const [selectedImg, setSelectedImg] = useState(0);
+
+  useEffect(() => {
+    fetchProductById(id);
+  }, [id]);
+  const pictures = [
+    product?.thumbnail?.url,
+    ...(product?.images?.map((img) => img.url) || []),
+  ].filter(Boolean);
+
+  if (loading) {
+    return (
+      <section className="w-full min-h-screen flex justify-center items-center">
+        <h3 className="font-heading text-3xl">Loading...</h3>
+      </section>
+    );
+  }
   return (
     <>
       <Navbar />
@@ -34,7 +48,22 @@ const ProductPage = () => {
             viewport={{ once: true }}
             className="product_left"
           >
-            <img src={ITEM.img} alt={ITEM.title} />
+            <img src={pictures[selectedImg]} alt={product?.title} />
+            <div className="flex flex-wrap gap-2 mt-2">
+              {pictures?.map((img, i) => (
+                <div
+                  key={i}
+                  className="w-1/5 aspect-square border-2 border-muted-brown rounded-xl overflow-hidden cursor-pointer"
+                  onClick={() => setSelectedImg(i)}
+                >
+                  <img
+                    src={img}
+                    alt={product?.title}
+                    className="object-cover size-full"
+                  />
+                </div>
+              ))}
+            </div>
           </motion.div>
 
           {/* right */}
@@ -47,22 +76,11 @@ const ProductPage = () => {
           >
             <span className="product_badge">Macrame</span>
             <h1 className="product_title">
-              {ITEM.title}
+              {product?.title}
               <div className="product_title_underline" />
             </h1>
 
-            <p className="product_desc">
-              A hand-knotted wall piece inspired by the geometry of sunlight
-              through woven curtains. Each knot is tied with intention, creating
-              a meditation in cotton and form.
-            </p>
-
-            <h3 className="product_label">Details</h3>
-
-            <div className="product_info">
-              <p>Material: 100% natural cotton rope</p>
-              <p>Dimensions: 60 × 90 cm</p>
-            </div>
+            <p className="product_desc">{product?.description}</p>
 
             <span className="product_label">Find us on instagram</span>
             <Link

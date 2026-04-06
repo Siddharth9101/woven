@@ -1,47 +1,11 @@
 import { Link } from "react-router";
 import GalleryCard from "./ui/Card";
 import { motion } from "framer-motion";
-
-const ITEMS = [
-  {
-    id: 1,
-    img: "/flowral_pouch/flowral_pouch_01.jpeg",
-    title: "Floral Pouch",
-    subTitle: "crochet",
-  },
-  {
-    id: 2,
-    img: "/flowral_pouch/flowral_pouch_02.jpeg",
-    title: "Floral Pouch",
-    subTitle: "crochet",
-  },
-  {
-    id: 3,
-    img: "/flowral_pouch/flowral_pouch_03.jpeg",
-    title: "Floral Pouch",
-    subTitle: "crochet",
-  },
-  {
-    id: 4,
-    img: "/flowral_pouch/flowral_pouch_04.jpeg",
-    title: "Floral Pouch",
-    subTitle: "crochet",
-  },
-  {
-    id: 5,
-    img: "/flowral_pouch/flowral_pouch_05.jpeg",
-    title: "Floral Pouch",
-    subTitle: "crochet",
-  },
-  {
-    id: 6,
-    img: "/flowral_pouch/flowral_pouch.png",
-    title: "Floral Pouch",
-    subTitle: "crochet",
-  },
-];
+import { useProducts } from "../hooks/useProducts.jsx";
 
 const Gallery = () => {
+  const { loading, products } = useProducts();
+
   return (
     <section className="container mb-8">
       <div className="py-2">
@@ -61,11 +25,17 @@ const Gallery = () => {
       </div>
 
       {/* Items Grid */}
-      <div className=" grid gap-6 sm:grid-cols-3 sm:gap-8">
-        {ITEMS.map((item) => (
-          <GalleryCard item={item} key={item.id} />
-        ))}
-      </div>
+      {!loading && products && products.length !== 0 ? (
+        <div className=" grid gap-6 sm:grid-cols-3 sm:gap-8">
+          {products?.map((item) => (
+            <GalleryCard item={item} key={item._id} />
+          ))}
+        </div>
+      ) : (
+        <div className="w-full h-64 flex justify-center items-center">
+          <h3 className="font-label text-lg font-light">No products found.</h3>
+        </div>
+      )}
     </section>
   );
 };

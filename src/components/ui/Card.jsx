@@ -9,14 +9,18 @@ const GalleryCard = ({ item }) => {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <Link to={`/gallery/${item.title}`} state={{ id: item.id }}>
+      <Link to={`/gallery/${item._id}`}>
         <div className="card_container">
           <div className="card">
             <div className="card_img_wrapper">
-              <img src={item.img} alt={item.title} className="card_img" />
+              <img
+                src={item.thumbnail.url}
+                alt={item.title}
+                className="card_img"
+              />
             </div>
             <h4 className="card_title">{item.title}</h4>
-            <span className="card_sub_title">{item.subTitle}</span>
+            <span className="card_sub_title">{item.type}</span>
           </div>
         </div>
       </Link>
