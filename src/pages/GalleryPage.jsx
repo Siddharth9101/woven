@@ -3,6 +3,7 @@ import Footer from "../components/Footer.jsx";
 import { Link } from "react-router";
 import { MdArrowBack } from "react-icons/md";
 import GalleryCard from "../components/ui/Card.jsx";
+import SkeletonCard from "../components/ui/Skeleton.jsx";
 import { useProducts } from "../hooks/useProducts.jsx";
 
 const GalleryPage = () => {
@@ -20,8 +21,14 @@ const GalleryPage = () => {
           </Link>
         </div>
         <div>
-          {!loading && products && products.length !== 0 ? (
-            <div className=" grid gap-6 sm:grid-cols-3 sm:gap-8">
+          {loading ? (
+            <div className="grid gap-6 sm:grid-cols-3 sm:gap-8">
+              {[...Array(6)].map((_, index) => (
+                <SkeletonCard key={index} />
+              ))}
+            </div>
+          ) : products && products.length !== 0 ? (
+            <div className="grid gap-6 sm:grid-cols-3 sm:gap-8">
               {products?.map((item) => (
                 <GalleryCard item={item} key={item._id} />
               ))}

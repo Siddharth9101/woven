@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import GalleryCard from "./ui/Card";
+import SkeletonCard from "./ui/Skeleton";
 import { motion } from "framer-motion";
 import { useProducts } from "../hooks/useProducts.jsx";
 
@@ -25,8 +26,14 @@ const Gallery = () => {
       </div>
 
       {/* Items Grid */}
-      {!loading && products && products.length !== 0 ? (
-        <div className=" grid gap-6 sm:grid-cols-3 sm:gap-8">
+      {loading ? (
+        <div className="grid gap-6 sm:grid-cols-3 sm:gap-8">
+          {[...Array(3)].map((_, index) => (
+            <SkeletonCard key={index} />
+          ))}
+        </div>
+      ) : products && products.length !== 0 ? (
+        <div className="grid gap-6 sm:grid-cols-3 sm:gap-8">
           {products?.map((item) => (
             <GalleryCard item={item} key={item._id} />
           ))}
